@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoClickerProgram", "AutoClickerProgram\AutoClickerProgram.csproj", "{5826B7C3-4127-427C-BBBC-BD14AD583944}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMGAutoClicker", "WindowsFormsAutoClicker\IMGAutoClicker.csproj", "{443646A1-B8EC-47A1-B675-D5E86F8B7598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAutoClicker", "WindowsFormsAutoClicker\WindowsFormsAutoClicker.csproj", "{443646A1-B8EC-47A1-B675-D5E86F8B7598}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLambdatestAutoOpenADS", "WpfLambdatestAutoOpenADS\WpfLambdatestAutoOpenADS.csproj", "{BF0053D6-BF45-4F09-8D37-A484B1549700}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5826B7C3-4127-427C-BBBC-BD14AD583944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5826B7C3-4127-427C-BBBC-BD14AD583944}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5826B7C3-4127-427C-BBBC-BD14AD583944}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5826B7C3-4127-427C-BBBC-BD14AD583944}.Release|Any CPU.Build.0 = Release|Any CPU
 		{443646A1-B8EC-47A1-B675-D5E86F8B7598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{443646A1-B8EC-47A1-B675-D5E86F8B7598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{443646A1-B8EC-47A1-B675-D5E86F8B7598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{443646A1-B8EC-47A1-B675-D5E86F8B7598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0053D6-BF45-4F09-8D37-A484B1549700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0053D6-BF45-4F09-8D37-A484B1549700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0053D6-BF45-4F09-8D37-A484B1549700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0053D6-BF45-4F09-8D37-A484B1549700}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -201,8 +201,6 @@ namespace Test_C
 
             if (rect != Rectangle.Empty)//Image Foud
             {
-                //Point cntr = new Point(rect.X + System.Convert.ToInt32(rect.Width / (double)2), rect.Y + System.Convert.ToInt32(rect.Height / (double)2));
-                //Cursor.Position = cntr;
 
                 //MessageBox.Show(rect.ToString());
 
@@ -215,9 +213,6 @@ namespace Test_C
                 mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
 
 
-                /*this.Cursor = new Cursor(Cursor.Current.Handle);
-                Cursor.Position = new Point(Cursor.Position.X - 50, Cursor.Position.Y - 50);
-                Cursor.Clip = new Rectangle(this.Location, this.Size);*/
             }
 
 

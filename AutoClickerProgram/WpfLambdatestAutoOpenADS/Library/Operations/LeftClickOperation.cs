@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace WpfLambdatestAutoOpenADS.Library
+{
+    class LeftClickOperation : Operation
+    {
+        private MouseSimulator mouseSimulator;
+        private int x;
+        private int y;
+
+        public LeftClickOperation(string name, List<string> imgToFindPaths) : base(name, imgToFindPaths)
+        {
+            mouseSimulator = new MouseSimulator();
+        }
+
+        public override void DoCommand()
+        {
+            mouseSimulator.MoveTheMouse(x, y);
+            mouseSimulator.LeftClick(x,y);
+        }
+
+        public override void SetPosstion(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+    }
+}

@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using log4net;
 using WpfLambdatestAutoOpenADS.Library;
+using WpfLambdatestAutoOpenADS.Library.Enums;
 
 namespace WpfLambdatestAutoOpenADS
 {
@@ -42,8 +43,8 @@ namespace WpfLambdatestAutoOpenADS
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             log.Info("Starting");
-            
-            aTimer.Enabled = true;
+            run();
+            //aTimer.Enabled = true;
 
         }
 
@@ -63,16 +64,45 @@ namespace WpfLambdatestAutoOpenADS
 
 
             List<Operation> operations = new List<Operation>();
-            // each operation 
-                // delete the last screen
-                // take a screenShot
-                //  test all the FindIMGs
-                    // if successed 
-                    // mark as successed
-                    // DoTheAction
-                    // if not
-                    // try the others & mark as faild
-                    // if all faild = Try again 3 times then stop the program if it always fails
+
+            operations.Add(new LeftClickOperation
+                (
+                name: "Click on stack overflow Home",
+                imgToFindPaths:new List<string>()
+                                {
+                    @"C:\WpfLambdatesAutoOpenADS\StackOverflowHomeButton\1.PNG" , @"C:\WpfLambdatesAutoOpenADS\StackOverflowHomeButton\2.PNG"
+                                }
+                    
+                )
+            );
+
+            operations.Add(new MoveTheMouseClickAndTypeOperation
+               (
+               name: "Search from hello world",
+               imgToFindPaths: new List<string>()
+                               {
+                    @"C:\WpfLambdatesAutoOpenADS\StackOverflowSearchTextbox\1.PNG" 
+                               },
+               "Hello world"
+
+               )
+           );
+
+
+            foreach (Operation operation in operations)
+            {
+                if(operation.State == OperationState.Faild)
+                {
+                    HandleOperation handleOperation = new HandleOperation(operation);
+                    handleOperation.TryToHandle();
+
+                    if(operation.State != OperationState.Successed)
+                    {
+                        // stop or try again
+                    }
+                }
+            }
+
                     
         }
     }

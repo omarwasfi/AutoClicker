@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace WpfLambdatestAutoOpenADS.Library
+namespace ACLibrary
 {
-    class MouseSimulator
+    public class MouseSimulator
     {
         [DllImport("user32.dll", EntryPoint = "SetCursorPos")]
         [return: MarshalAs(UnmanagedType.Bool)]

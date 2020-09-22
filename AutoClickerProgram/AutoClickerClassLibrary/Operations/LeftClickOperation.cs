@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WpfLambdatestAutoOpenADS.Library
+namespace ACLibrary
 {
-    class LeftClickOperation : Operation
+    public class LeftClickOperation : Operation
     {
         private MouseSimulator mouseSimulator;
         private int x;

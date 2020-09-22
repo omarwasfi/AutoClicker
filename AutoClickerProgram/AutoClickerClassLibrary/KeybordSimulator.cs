@@ -4,9 +4,9 @@ using System.Text;
 using WindowsInput.Native;
 using WindowsInput;
 
-namespace WpfLambdatestAutoOpenADS.Library
+namespace ACLibrary
 {
-    class KeybordSimulator
+    public class KeybordSimulator
     {
         private InputSimulator sim;
 

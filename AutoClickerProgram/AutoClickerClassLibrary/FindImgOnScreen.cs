@@ -5,9 +5,9 @@ using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace WpfLambdatestAutoOpenADS
+namespace ACLibrary
 {
-    class FindImgOnScreen
+    public class FindImgOnScreen
     {
         private Bitmap ScreenBmp;
 

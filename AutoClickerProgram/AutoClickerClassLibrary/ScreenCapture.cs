@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace WpfLambdatestAutoOpenADS.Library
+namespace ACLibrary
 {
     public class ScreenCapture
     {

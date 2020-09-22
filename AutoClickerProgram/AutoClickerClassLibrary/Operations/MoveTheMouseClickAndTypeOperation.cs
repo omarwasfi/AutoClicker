@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WpfLambdatestAutoOpenADS.Library
+namespace ACLibrary
 {
-    class MoveTheMouseClickAndTypeOperation : Operation
+    public class MoveTheMouseClickAndTypeOperation : Operation
     {
         private KeybordSimulator keybordSimulator;
         private MouseSimulator mouseSimulator;

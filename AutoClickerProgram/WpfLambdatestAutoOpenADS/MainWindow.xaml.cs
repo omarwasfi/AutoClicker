@@ -14,8 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using log4net;
-using WpfLambdatestAutoOpenADS.Library;
-using WpfLambdatestAutoOpenADS.Library.Enums;
+using ACLibrary;
+using ACLibrary.Enums;
 
 namespace WpfLambdatestAutoOpenADS
 {

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
-using WpfLambdatestAutoOpenADS.Library.Enums;
+using ACLibrary.Enums;
 using System.Drawing.Imaging;
 using log4net;
+using System.Threading;
 
-namespace WpfLambdatestAutoOpenADS.Library
+namespace ACLibrary
 {
-    class HandleOperation
+    public class HandleOperation
     {
         private Operation operation;
         private IMGManager imgManager;
@@ -49,7 +50,7 @@ namespace WpfLambdatestAutoOpenADS.Library
                     operation.SetPosstion(rect.X, rect.Y);
                     operation.DoCommand();
                     operation.State = OperationState.Successed;
-                    
+                    Thread.Sleep(5000);
                     log.Info(imgToFindPath + " Found");
                     log.Info("Operation " +operation.Name +" successed");
                     break;

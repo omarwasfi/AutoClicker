@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
-using WpfLambdatestAutoOpenADS.Library.Enums;
+using ACLibrary.Enums;
 
-namespace WpfLambdatestAutoOpenADS.Library
+namespace ACLibrary
 {
-     abstract class Operation
+     public abstract class Operation
     {
         #region  Main properties
         public string Name { get; set; }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WpfLambdatestAutoOpenADS.Library.Enums
+namespace ACLibrary.Enums
 {
     public enum OperationState
     {

@@ -4,10 +4,10 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 
-namespace WpfLambdatestAutoOpenADS.Library
+namespace ACLibrary
 {
 
-    class IMGManager
+    public class IMGManager
     {
 
         public void DeleteScreenIfExist(string ScreenPath, Bitmap Screen)

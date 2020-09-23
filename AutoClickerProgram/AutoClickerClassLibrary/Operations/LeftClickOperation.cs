@@ -10,7 +10,7 @@ namespace ACLibrary
         private int x;
         private int y;
 
-        public LeftClickOperation(string name, List<string> imgToFindPaths) : base(name, imgToFindPaths)
+        public LeftClickOperation(string name, List<string> imgToFindPaths ,TimeSpan waitAfterDoCommand) : base(name, imgToFindPaths,waitAfterDoCommand)
         {
             mouseSimulator = new MouseSimulator();
         }

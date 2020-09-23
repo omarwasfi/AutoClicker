@@ -18,13 +18,14 @@ namespace ACLibrary
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
-        private const string ScreenPath = @"c:\WpfLambdatesAutoOpenADS\screen.png";
+        private string ScreenPath;
 
         private Bitmap screenBmp { get; set; }
 
-        public HandleOperation(Operation  operation)
+        public HandleOperation(Operation  operation, string screenPath)
         {
             this.operation = operation;
+            this.ScreenPath = screenPath;
             this.imgManager = new IMGManager();
             this.findImgOnScreen = new FindImgOnScreen();
 
@@ -47,11 +48,16 @@ namespace ACLibrary
                 Rectangle rect = findImgOnScreen.FindImageOnScreen(screenBmp,ImgToFind, false);
                 if (rect != Rectangle.Empty)
                 {
+                    log.Info(imgToFindPath + " Found");
+
                     operation.SetPosstion(rect.X, rect.Y);
                     operation.DoCommand();
                     operation.State = OperationState.Successed;
-                    Thread.Sleep(5000);
-                    log.Info(imgToFindPath + " Found");
+                    
+                    log.Info("Wating: " +operation.WaitAfterDoCommand.TotalSeconds+ " seconds");
+
+                    Thread.Sleep(operation.WaitAfterDoCommand);
+                    
                     log.Info("Operation " +operation.Name +" successed");
                     break;
                 }

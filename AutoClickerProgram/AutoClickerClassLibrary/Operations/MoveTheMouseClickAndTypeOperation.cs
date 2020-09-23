@@ -11,7 +11,7 @@ namespace ACLibrary
         private string text;
         private int x;
         private int y;
-        public MoveTheMouseClickAndTypeOperation(string name, List<string> imgToFindPaths, string text) : base(name, imgToFindPaths)
+        public MoveTheMouseClickAndTypeOperation(string name, List<string> imgToFindPaths, string text , TimeSpan waitAfterDoCommand) : base(name, imgToFindPaths , waitAfterDoCommand)
         {
             keybordSimulator = new KeybordSimulator();
             mouseSimulator = new MouseSimulator();

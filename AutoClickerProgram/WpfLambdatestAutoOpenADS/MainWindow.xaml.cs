@@ -93,7 +93,7 @@ namespace WpfLambdatestAutoOpenADS
             {
                 if(operation.State == OperationState.Faild)
                 {
-                    HandleOperation handleOperation = new HandleOperation(operation);
+                    HandleOperation handleOperation = new HandleOperation(operation , @"c:\WpfLambdatesAutoOpenADS\screen.png");
                     handleOperation.TryToHandle();
 
                     if(operation.State != OperationState.Successed)

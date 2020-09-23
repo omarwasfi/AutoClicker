@@ -34,15 +34,15 @@ namespace LambdatestConsole
                     name: "Click on stack overflow Home",
                     imgToFindPaths: new List<string>()
                     {
-                        @"C:\WpfLambdatesAutoOpenADS\StackOverflowHomeButton\1.PNG",
-                        @"C:\WpfLambdatesAutoOpenADS\StackOverflowHomeButton\2.PNG"
+                        @"C:\LambdatestConsole\StackOverflowHomeButton\1.PNG",
+                        @"C:\LambdatestConsole\StackOverflowHomeButton\2.PNG"
                     },
                     waitAfterDoCommand: new TimeSpan(0,0,0)
                 ),
                 new MoveTheMouseClickAndTypeOperation
                 (
                     name: "Search from hello world",
-                    imgToFindPaths: new List<string>() {@"C:\WpfLambdatesAutoOpenADS\StackOverflowSearchTextbox\1.PNG"},
+                    imgToFindPaths: new List<string>() {@"C:\LambdatestConsole\StackOverflowSearchTextbox\1.PNG"},
                     "Hello world",
                     waitAfterDoCommand:new TimeSpan(0,0,10)
                     
@@ -52,8 +52,8 @@ namespace LambdatestConsole
                     name: "Click on stack overflow Home",
                     imgToFindPaths: new List<string>()
                     {
-                        @"C:\WpfLambdatesAutoOpenADS\StackOverflowHomeButton\1.PNG",
-                        @"C:\WpfLambdatesAutoOpenADS\StackOverflowHomeButton\2.PNG"
+                        @"C:\LambdatestConsole\StackOverflowHomeButton\1.PNG",
+                        @"C:\LambdatestConsole\StackOverflowHomeButton\2.PNG"
                     },
                     waitAfterDoCommand: new TimeSpan(0,0,0)
                 )
@@ -67,7 +67,7 @@ namespace LambdatestConsole
                 if (operation.State == OperationState.Faild)
                 {
                     HandleOperation handleOperation =
-                        new HandleOperation(operation, @"c:\WpfLambdatesAutoOpenADS\screen.png");
+                        new HandleOperation(operation, @"c:\LambdatestConsole\screen.png");
                     handleOperation.TryToHandle();
 
                     if (operation.State != OperationState.Successed)

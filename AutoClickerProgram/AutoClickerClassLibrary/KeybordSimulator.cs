@@ -28,5 +28,10 @@ namespace ACLibrary
         {
             sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_C);
         }
+
+        public void PressEnter()
+        {
+            sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+        }
     }
 }

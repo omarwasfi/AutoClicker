@@ -22,7 +22,7 @@ namespace ACLibrary
 
         public void MoveTheMouse(int x  ,  int y)
         {
-            SetCursorPos(x , y);
+            SetCursorPos(x + 20 , y + 20);
         }
 
         public void LeftClick(int x , int y)

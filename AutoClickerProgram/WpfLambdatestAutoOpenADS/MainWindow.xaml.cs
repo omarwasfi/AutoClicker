@@ -63,47 +63,7 @@ namespace WpfLambdatestAutoOpenADS
         {
 
 
-            List<Operation> operations = new List<Operation>();
-
-            operations.Add(new LeftClickOperation
-                (
-                name: "Click on stack overflow Home",
-                imgToFindPaths:new List<string>()
-                                {
-                    @"C:\WpfLambdatesAutoOpenADS\StackOverflowHomeButton\1.PNG" , @"C:\WpfLambdatesAutoOpenADS\StackOverflowHomeButton\2.PNG"
-                                }
-                    
-                )
-            );
-
-            operations.Add(new MoveTheMouseClickAndTypeOperation
-               (
-               name: "Search from hello world",
-               imgToFindPaths: new List<string>()
-                               {
-                    @"C:\WpfLambdatesAutoOpenADS\StackOverflowSearchTextbox\1.PNG" 
-                               },
-               "Hello world"
-
-               )
-           );
-
-
-            foreach (Operation operation in operations)
-            {
-                if(operation.State == OperationState.Faild)
-                {
-                    HandleOperation handleOperation = new HandleOperation(operation , @"c:\WpfLambdatesAutoOpenADS\screen.png");
-                    handleOperation.TryToHandle();
-
-                    if(operation.State != OperationState.Successed)
-                    {
-                        // stop or try again
-                    }
-                }
-            }
-
-                    
+            
         }
     }
 }

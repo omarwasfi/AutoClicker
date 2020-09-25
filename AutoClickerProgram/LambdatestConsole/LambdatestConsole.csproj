@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AutoClickerClassLibrary\AutoClickerClassLibrary.csproj" />
+    <ProjectReference Include="..\MailService\MailService.csproj" />
   </ItemGroup>
 
 </Project>

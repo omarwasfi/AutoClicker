@@ -1,11 +1,11 @@
 ﻿using ACLibrary;
 using ACLibrary.Enums;
 using log4net;
+using MailService;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
 
 
 namespace LambdatestConsole
@@ -24,28 +24,7 @@ namespace LambdatestConsole
             Console.WriteLine("Enter 1 to start");
             if(Console.ReadLine() == "1")
             {
-                /*Operation o = new LeftClickOperation
-                (
-                    name: "Type The Ad Url",
-                    imgToFindPaths: new List<string>()
-                    {
-                        @"C:\LambdatestConsole\LambdaTest\3-TypeTheAdUrl\1.PNG",
-                    },
-                    
-                    waitAfterDoCommand: new TimeSpan(0, 0, 30)
-                );*/
-               /* Operation o = new MoveTheMouseClickAndTypeOperation
-                (
-                    name: "Type The Ad Url",
-                    imgToFindPaths: new List<string>()
-                    {
-                        @"C:\LambdatestConsole\LambdaTest\3-TypeTheAdUrl\1.PNG",
-                    },
-                    text: "298917.click-allow.top",
-                    waitAfterDoCommand: new TimeSpan(0, 0, 30)
-                );*/
-                /*HandleOperation h = new HandleOperation(o,@"c:\LambdatestConsole\screen.png");
-                h.TryToHandle();*/
+               
                 run();
             }
         }
@@ -56,16 +35,24 @@ namespace LambdatestConsole
 
             string fullName = "poiqyufgasd";
             List<string> emails = File.ReadAllLines(@"c:\LambdatestConsole\Emails.txt").ToList();
+            
+            log.Info("Number of Emails: " + emails.Count);
+            
             string password = "oiuy213ws";
             string companyName = "asdfqw";
             string phoneNumber = "7898652145";
 
-            TextCopy.ClipboardService.SetText("298917.click-allow.top");
 
+            Email reportEmail = new Email();
+            string body ="Number of emails: " + emails.Count().ToString() + " \n" + "First Email: " + emails[0] ;
+            reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report", body);
 
 
             foreach (var email in emails)
             {
+                log.Info("===================================================");
+                log.Info("Start " + email);
+                log.Info("Email Number : "+ emails.IndexOf(email).ToString());
                 List<Operation> operations = new List<Operation>
                 {
                     new MoveTheMouseClickAndTypeOperation
@@ -105,7 +92,7 @@ namespace LambdatestConsole
                         {
                             @"C:\LambdatestConsole\RegisterPage\4-CompanyName\1.PNG",
                         },
-                        text: password,
+                        text: companyName,
                         waitAfterDoCommand: new TimeSpan(0,0,0)
                     ),
                     new MoveTheMouseClickAndTypeOperation
@@ -172,10 +159,18 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
-
+                    
                     #region 1st
 
-
+                    new LeftClickOperation
+                    (
+                        name: "Choose 1024x768 ",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,0)
+                    ),
                     new LeftClickOperation
                     (
                         name: "Click start",
@@ -222,7 +217,7 @@ namespace LambdatestConsole
                         {
                             @"C:\LambdatestConsole\LambdaTest\6-PressThirdAllow\1.PNG",
                         },
-                        waitAfterDoCommand: new TimeSpan(0,2,0)
+                        waitAfterDoCommand: new TimeSpan(0,1,0)
                     ),
                     new LeftClickOperation
                     (

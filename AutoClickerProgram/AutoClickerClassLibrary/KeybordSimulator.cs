@@ -33,5 +33,9 @@ namespace ACLibrary
         {
             sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
         }
+        public void PressTab()
+        {
+            sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
+        }
     }
 }

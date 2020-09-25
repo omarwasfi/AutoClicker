@@ -8,6 +8,7 @@
     <PackageReference Include="InputSimulator" Version="1.0.4" />
     <PackageReference Include="log4net" Version="2.0.10" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="TextCopy" Version="4.2.0" />
   </ItemGroup>
 
 </Project>

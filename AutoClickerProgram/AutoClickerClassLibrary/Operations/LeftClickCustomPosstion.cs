@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace ACLibrary
 {
-    public class LeftClickOperation : Operation
+    public class LeftClickCustomPosstion : Operation
     {
         private MouseSimulator mouseSimulator;
         private int x;
         private int y;
 
-        public LeftClickOperation(string name, List<string> imgToFindPaths ,TimeSpan waitAfterDoCommand) : base(name, imgToFindPaths,waitAfterDoCommand)
+        public LeftClickCustomPosstion(string name, List<string> imgToFindPaths , int x , int y ,TimeSpan waitAfterDoCommand) : base(name, imgToFindPaths,waitAfterDoCommand)
         {
             mouseSimulator = new MouseSimulator();
+
+            this.x = x;
+            this.y = y;
         }
 
        
 
         public override void SetPosstion(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            
         }
         
         public override void DoCommand()
@@ -28,6 +31,5 @@ namespace ACLibrary
             mouseSimulator.MoveTheMouse(x, y);
             mouseSimulator.LeftClick(x,y);
         }
-
     }
 }

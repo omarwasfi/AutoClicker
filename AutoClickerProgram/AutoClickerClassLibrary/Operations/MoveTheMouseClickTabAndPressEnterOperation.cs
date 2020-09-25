@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ACLibrary
 {
-    public class LeftClickOperation : Operation
+    public class MoveTheMouseClickTabAndPressEnterOperation : Operation
     {
         private MouseSimulator mouseSimulator;
         private int x;
         private int y;
 
-        public LeftClickOperation(string name, List<string> imgToFindPaths ,TimeSpan waitAfterDoCommand) : base(name, imgToFindPaths,waitAfterDoCommand)
+        public MoveTheMouseClickTabAndPressEnterOperation(string name, List<string> imgToFindPaths ,TimeSpan waitAfterDoCommand) : base(name, imgToFindPaths,waitAfterDoCommand)
         {
             mouseSimulator = new MouseSimulator();
         }
@@ -27,7 +26,8 @@ namespace ACLibrary
         {
             mouseSimulator.MoveTheMouse(x, y);
             mouseSimulator.LeftClick(x,y);
+            new KeybordSimulator().PressTab();
+            new KeybordSimulator().PressEnter();
         }
-
     }
 }

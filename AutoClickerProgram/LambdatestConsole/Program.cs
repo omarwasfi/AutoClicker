@@ -4,6 +4,7 @@ using log4net;
 using MailService;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 
@@ -41,6 +42,10 @@ namespace LambdatestConsole
             string password = "oiuy213ws";
             string companyName = "asdfqw";
             string phoneNumber = "7898652145";
+
+
+            int ndAllowXPOS = 341;
+            int ndAllowYPOS = 263;
 
 
             Email reportEmail = new Email();
@@ -206,8 +211,8 @@ namespace LambdatestConsole
                         {
                             @"C:\LambdatestConsole\LambdaTest\5-PressSecondAllow\1.PNG",
                         },
-                        x: 396,
-                        y:295,
+                        x: ndAllowXPOS,
+                        y:ndAllowYPOS,
                         waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     new MoveTheMouseClickTabAndPressEnterOperation
@@ -242,7 +247,15 @@ namespace LambdatestConsole
                     
                     #region 2nd
 
-
+                    new LeftClickOperation
+                    (
+                        name: "Choose 1024x768 ",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,0)
+                    ),
                     new LeftClickOperation
                     (
                         name: "Click start",
@@ -278,8 +291,8 @@ namespace LambdatestConsole
                         {
                             @"C:\LambdatestConsole\LambdaTest\5-PressSecondAllow\1.PNG",
                         },
-                        x: 396,
-                        y:295,
+                        x: ndAllowXPOS,
+                        y:ndAllowYPOS,
                         waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     new MoveTheMouseClickTabAndPressEnterOperation
@@ -311,8 +324,18 @@ namespace LambdatestConsole
                     ),
                     
                     #endregion 
-                   
-                    #region 3rd Last
+
+                    #region 3rd
+
+                    new LeftClickOperation
+                    (
+                        name: "Choose 1024x768 ",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,0)
+                    ),
                     new LeftClickOperation
                     (
                         name: "Click start",
@@ -348,8 +371,8 @@ namespace LambdatestConsole
                         {
                             @"C:\LambdatestConsole\LambdaTest\5-PressSecondAllow\1.PNG",
                         },
-                        x: 396,
-                        y:295,
+                        x: ndAllowXPOS,
+                        y:ndAllowYPOS,
                         waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     new MoveTheMouseClickTabAndPressEnterOperation
@@ -379,7 +402,251 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,10)
                     ),
+                    
                     #endregion
+
+                    #region 4th
+
+                    new LeftClickOperation
+                    (
+                        name: "Choose 1024x768 ",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,0)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Click start",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-ClickStart\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,1,0)
+                    ),
+                    new MoveTheMouseClickTabTabCopyToClipboardPasteAndPressEnterOperation
+                    (
+                        name: "Type The Ad Url",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\3-TypeTheAdUrl\1.PNG",
+                        },
+                        text: "298917.click-allow.top",
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new MoveTheMouseClickTabAndPressEnterOperation
+                    (
+                        name: "Press first allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\4-PressFirstAllow\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new LeftClickCustomPosstion
+                    (
+                        name: "click second allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\5-PressSecondAllow\1.PNG",
+                        },
+                        x: ndAllowXPOS,
+                        y:ndAllowYPOS,
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new MoveTheMouseClickTabAndPressEnterOperation
+                    (
+                        name: "Press Third allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\6-PressThirdAllow\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,1,0)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Click Exit",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-PressExit\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Yes, End session",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),
+                    
+                    #endregion 
+
+                    #region 5th
+
+                    new LeftClickOperation
+                    (
+                        name: "Choose 1024x768 ",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,0)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Click start",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-ClickStart\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,1,0)
+                    ),
+                    new MoveTheMouseClickTabTabCopyToClipboardPasteAndPressEnterOperation
+                    (
+                        name: "Type The Ad Url",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\3-TypeTheAdUrl\1.PNG",
+                        },
+                        text: "298917.click-allow.top",
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new MoveTheMouseClickTabAndPressEnterOperation
+                    (
+                        name: "Press first allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\4-PressFirstAllow\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new LeftClickCustomPosstion
+                    (
+                        name: "click second allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\5-PressSecondAllow\1.PNG",
+                        },
+                        x: ndAllowXPOS,
+                        y:ndAllowYPOS,
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new MoveTheMouseClickTabAndPressEnterOperation
+                    (
+                        name: "Press Third allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\6-PressThirdAllow\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,1,0)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Click Exit",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-PressExit\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Yes, End session",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),
+                    
+                    #endregion 
+
+                    #region 6th
+
+                    new LeftClickOperation
+                    (
+                        name: "Choose 1024x768 ",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,0)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Click start",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\2-ClickStart\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,1,0)
+                    ),
+                    new MoveTheMouseClickTabTabCopyToClipboardPasteAndPressEnterOperation
+                    (
+                        name: "Type The Ad Url",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\3-TypeTheAdUrl\1.PNG",
+                        },
+                        text: "298917.click-allow.top",
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new MoveTheMouseClickTabAndPressEnterOperation
+                    (
+                        name: "Press first allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\4-PressFirstAllow\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new LeftClickCustomPosstion
+                    (
+                        name: "click second allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\5-PressSecondAllow\1.PNG",
+                        },
+                        x: ndAllowXPOS,
+                        y:ndAllowYPOS,
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new MoveTheMouseClickTabAndPressEnterOperation
+                    (
+                        name: "Press Third allow",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\6-PressThirdAllow\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,1,0)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Click Exit",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-PressExit\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Yes, End session",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),
+                    
+                    #endregion 
+                    
+                   
+                    
                     
                     // All Sessions Done
                     
@@ -498,8 +765,13 @@ namespace LambdatestConsole
 
                         if (operation.State != OperationState.Successed)
                         {
-                            // stop or try again
+                            log.Info("Operation: " + operation.Name + "=> Faild");
                         }
+                        else
+                        {
+                            log.Info("Operation: " + operation.Name + "=> Succsseed");
+                        }
+
                     }
                 }
                 

@@ -45,8 +45,8 @@ namespace LambdatestConsole
 
             int doneEmails = 0;
 
-            int ndAllowXPOS = 341;
-            int ndAllowYPOS = 263;
+            int ndAllowXPOS = 335;
+            int ndAllowYPOS = 255;
 
 
             Email reportEmail = new Email();
@@ -832,7 +832,7 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,1)
                     ),
-                    new LeftClickOperation
+                    /*new LeftClickOperation
                     (
                         name: "BackToMailList",
                         imgToFindPaths: new List<string>()
@@ -856,6 +856,15 @@ namespace LambdatestConsole
                         imgToFindPaths: new List<string>()
                         {
                             @"C:\LambdatestConsole\4-CleanUp\6-DeleteEmail\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,1)
+                    ),*/
+                    new LeftClickOperation
+                    (
+                        name: "Delete the Email",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\4-CleanUp\3-2-DeleteLastVerfication\1.PNG",
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,1)
                     ),

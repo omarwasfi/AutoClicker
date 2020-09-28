@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
-
+using System.Threading;
 
 namespace LambdatestConsole
 {
@@ -43,6 +43,7 @@ namespace LambdatestConsole
             string companyName = "asdfqw";
             string phoneNumber = "7898652145";
 
+            int doneEmails = 0;
 
             int ndAllowXPOS = 341;
             int ndAllowYPOS = 263;
@@ -57,7 +58,7 @@ namespace LambdatestConsole
             {
                 log.Info("===================================================");
                 log.Info("Start " + email);
-                log.Info("Email Number : "+ emails.IndexOf(email).ToString());
+                log.Info("Email Number : " + emails.IndexOf(email).ToString());
                 List<Operation> operations = new List<Operation>
                 {
                     new MoveTheMouseClickAndTypeOperation
@@ -115,7 +116,7 @@ namespace LambdatestConsole
                         name: "Click on agree",
                         imgToFindPaths: new List<string>()
                         {
-                            @"C:\LambdatestConsole\RegisterPage\6-Agree\1.PNG",
+                            @"C:\LambdatestConsole\RegisterPage\6-Agree\1.PNG"
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,0)
                     ),
@@ -133,7 +134,16 @@ namespace LambdatestConsole
                         name: "Go To Gmail tab",
                         imgToFindPaths: new List<string>()
                         {
-                            @"C:\LambdatestConsole\Gmail\1-Tab\1.PNG",
+                            @"C:\LambdatestConsole\Gmail\1-1-Tab\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "Refresh Gmail",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\Gmail\1-2-RefreshGmail\1.PNG",
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,10)
                     ),
@@ -173,6 +183,7 @@ namespace LambdatestConsole
                         imgToFindPaths: new List<string>()
                         {
                             @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\2.PNG"
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,0)
                     ),
@@ -224,7 +235,7 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,1,0)
                     ),
-                    new LeftClickOperation
+                    /*new LeftClickOperation
                     (
                         name: "Click Exit",
                         imgToFindPaths: new List<string>()
@@ -241,11 +252,29 @@ namespace LambdatestConsole
                             @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),*/
+                    new MoveTheMouseClickTypeAndPressEnterOperation
+                    (
+                        name: "Write URL to go the realtime",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-1-GoToTheRealTime\1.PNG",
+                        },
+                        text: "https://app.lambdatest.com/console/realtime",
+                        waitAfterDoCommand: new TimeSpan(0,0,1)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "click leave",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-2-PressLeave\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     
                     #endregion 
-                    
-                    #region 2nd
+                    #region 1st
 
                     new LeftClickOperation
                     (
@@ -253,6 +282,7 @@ namespace LambdatestConsole
                         imgToFindPaths: new List<string>()
                         {
                             @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\2.PNG"
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,0)
                     ),
@@ -304,7 +334,7 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,1,0)
                     ),
-                    new LeftClickOperation
+                    /*new LeftClickOperation
                     (
                         name: "Click Exit",
                         imgToFindPaths: new List<string>()
@@ -321,11 +351,29 @@ namespace LambdatestConsole
                             @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),*/
+                    new MoveTheMouseClickTypeAndPressEnterOperation
+                    (
+                        name: "Write URL to go the realtime",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-1-GoToTheRealTime\1.PNG",
+                        },
+                        text: "https://app.lambdatest.com/console/realtime",
+                        waitAfterDoCommand: new TimeSpan(0,0,1)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "click leave",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-2-PressLeave\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     
                     #endregion 
-
-                    #region 3rd
+                    #region 1st
 
                     new LeftClickOperation
                     (
@@ -333,6 +381,7 @@ namespace LambdatestConsole
                         imgToFindPaths: new List<string>()
                         {
                             @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\2.PNG"
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,0)
                     ),
@@ -384,7 +433,7 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,1,0)
                     ),
-                    new LeftClickOperation
+                    /*new LeftClickOperation
                     (
                         name: "Click Exit",
                         imgToFindPaths: new List<string>()
@@ -401,11 +450,29 @@ namespace LambdatestConsole
                             @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),*/
+                    new MoveTheMouseClickTypeAndPressEnterOperation
+                    (
+                        name: "Write URL to go the realtime",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-1-GoToTheRealTime\1.PNG",
+                        },
+                        text: "https://app.lambdatest.com/console/realtime",
+                        waitAfterDoCommand: new TimeSpan(0,0,1)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "click leave",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-2-PressLeave\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     
-                    #endregion
-
-                    #region 4th
+                    #endregion 
+                    #region 1st
 
                     new LeftClickOperation
                     (
@@ -413,6 +480,7 @@ namespace LambdatestConsole
                         imgToFindPaths: new List<string>()
                         {
                             @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\2.PNG"
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,0)
                     ),
@@ -464,7 +532,7 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,1,0)
                     ),
-                    new LeftClickOperation
+                    /*new LeftClickOperation
                     (
                         name: "Click Exit",
                         imgToFindPaths: new List<string>()
@@ -481,11 +549,29 @@ namespace LambdatestConsole
                             @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),*/
+                    new MoveTheMouseClickTypeAndPressEnterOperation
+                    (
+                        name: "Write URL to go the realtime",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-1-GoToTheRealTime\1.PNG",
+                        },
+                        text: "https://app.lambdatest.com/console/realtime",
+                        waitAfterDoCommand: new TimeSpan(0,0,1)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "click leave",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-2-PressLeave\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     
                     #endregion 
-
-                    #region 5th
+                    #region 1st
 
                     new LeftClickOperation
                     (
@@ -493,6 +579,7 @@ namespace LambdatestConsole
                         imgToFindPaths: new List<string>()
                         {
                             @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\2.PNG"
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,0)
                     ),
@@ -544,7 +631,7 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,1,0)
                     ),
-                    new LeftClickOperation
+                    /*new LeftClickOperation
                     (
                         name: "Click Exit",
                         imgToFindPaths: new List<string>()
@@ -561,11 +648,29 @@ namespace LambdatestConsole
                             @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),*/
+                    new MoveTheMouseClickTypeAndPressEnterOperation
+                    (
+                        name: "Write URL to go the realtime",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-1-GoToTheRealTime\1.PNG",
+                        },
+                        text: "https://app.lambdatest.com/console/realtime",
+                        waitAfterDoCommand: new TimeSpan(0,0,1)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "click leave",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-2-PressLeave\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     
                     #endregion 
-
-                    #region 6th
+                    #region 1st
 
                     new LeftClickOperation
                     (
@@ -573,6 +678,7 @@ namespace LambdatestConsole
                         imgToFindPaths: new List<string>()
                         {
                             @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\1.PNG",
+                            @"C:\LambdatestConsole\LambdaTest\2-1-Choose1024x768\2.PNG"
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,0)
                     ),
@@ -624,7 +730,7 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,1,0)
                     ),
-                    new LeftClickOperation
+                    /*new LeftClickOperation
                     (
                         name: "Click Exit",
                         imgToFindPaths: new List<string>()
@@ -641,9 +747,31 @@ namespace LambdatestConsole
                             @"C:\LambdatestConsole\LambdaTest\8-YesEndSession\1.PNG",
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,10)
+                    ),*/
+                    new MoveTheMouseClickTypeAndPressEnterOperation
+                    (
+                        name: "Write URL to go the realtime",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-1-GoToTheRealTime\1.PNG",
+                        },
+                        text: "https://app.lambdatest.com/console/realtime",
+                        waitAfterDoCommand: new TimeSpan(0,0,1)
+                    ),
+                    new LeftClickOperation
+                    (
+                        name: "click leave",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\LambdaTest\7-2-PressLeave\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,5)
                     ),
                     
                     #endregion 
+                    
+                    
+                    
                     
                    
                     
@@ -706,15 +834,6 @@ namespace LambdatestConsole
                     ),
                     new LeftClickOperation
                     (
-                        name: "OpenLastVerficationGmail",
-                        imgToFindPaths: new List<string>()
-                        {
-                            @"C:\LambdatestConsole\4-CleanUp\3-OpenLastVerficationGmail\1.PNG",
-                        },
-                        waitAfterDoCommand: new TimeSpan(0,0,1)
-                    ),
-                    new LeftClickOperation
-                    (
                         name: "BackToMailList",
                         imgToFindPaths: new List<string>()
                         {
@@ -749,32 +868,51 @@ namespace LambdatestConsole
                         },
                         waitAfterDoCommand: new TimeSpan(0,0,1)
                     )
-                    
-                    
-                    
+
+
+
                 };
-                
-                
+
+
                 foreach (Operation operation in operations)
                 {
-                    if (operation.State == OperationState.Faild)
+                    int tries = 0;
+                    while (operation.State == OperationState.Faild)
                     {
                         HandleOperation handleOperation =
-                            new HandleOperation(operation, @"c:\LambdatestConsole\screen.png");
+                           new HandleOperation(operation, @"c:\LambdatestConsole\screen.png");
                         handleOperation.TryToHandle();
 
                         if (operation.State != OperationState.Successed)
                         {
                             log.Info("Operation: " + operation.Name + "=> Faild");
+                            Thread.Sleep(1000);
+                            if(tries == 300)
+                            {
+                                reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report Stuck",
+                                    "Operation name: " + operation.Name + " \n Number of done emails: " + doneEmails.ToString() +" \n Current email: "+ email) ;
+                            }
+
                         }
                         else
                         {
                             log.Info("Operation: " + operation.Name + "=> Succsseed");
                         }
-
+                        
+                        tries++;
                     }
+
                 }
-                
+
+                doneEmails += 1;
+
+                if (doneEmails % 1000 == 0)
+                {
+                    reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report 1000 email DONE",
+                        "Done Emails: " + doneEmails.ToString() + " \n" + 
+                        "From Total: " + emails.Count.ToString() + " \n" + "Current Email: " + email) ;
+                }
+
             }
             
            

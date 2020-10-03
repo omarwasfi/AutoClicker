@@ -37,5 +37,10 @@ namespace ACLibrary
         {
             sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
         }
+
+        public void PressALTLWithTAb()
+        {
+            sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LMENU, VirtualKeyCode.TAB);
+        }
     }
 }

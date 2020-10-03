@@ -18,14 +18,14 @@ namespace LambdatestConsole
         [STAThreadAttribute]
         static void Main(string[] args)
         {
-           // ILog log = log4net.LogManager.GetLogger(typeof(Program));
+            // ILog log = log4net.LogManager.GetLogger(typeof(Program));
 
             log4net.Config.XmlConfigurator.Configure();
             log.Info("        =============  Started Logging  =============        ");
             Console.WriteLine("Enter 1 to start");
-            if(Console.ReadLine() == "1")
+            if (Console.ReadLine() == "1")
             {
-               
+
                 run();
             }
         }
@@ -36,9 +36,9 @@ namespace LambdatestConsole
 
             string fullName = "poiqyufgasd";
             List<string> emails = File.ReadAllLines(@"c:\LambdatestConsole\Emails.txt").ToList();
-            
+
             log.Info("Number of Emails: " + emails.Count);
-            
+
             string password = "oiuy213ws";
             string companyName = "asdfqw";
             string phoneNumber = "7898652145";
@@ -50,7 +50,7 @@ namespace LambdatestConsole
 
 
             Email reportEmail = new Email();
-            string body ="Number of emails: " + emails.Count().ToString() + " \n" + "First Email: " + emails[0] ;
+            string body = "Number of emails: " + emails.Count().ToString() + " \n" + "First Email: " + emails[0];
             reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report", body);
 
 
@@ -896,10 +896,10 @@ namespace LambdatestConsole
                         {
                             log.Info("Operation: " + operation.Name + "=> Faild");
                             Thread.Sleep(1000);
-                            if(tries == 300)
+                            if (tries == 300)
                             {
                                 reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report Stuck",
-                                    "Operation name: " + operation.Name + " \n Number of done emails: " + doneEmails.ToString() +" \n Current email: "+ email) ;
+                                    "Operation name: " + operation.Name + " \n Number of done emails: " + doneEmails.ToString() + " \n Current email: " + email);
                             }
 
                         }
@@ -907,7 +907,7 @@ namespace LambdatestConsole
                         {
                             log.Info("Operation: " + operation.Name + "=> Succsseed");
                         }
-                        
+
                         tries++;
                     }
 
@@ -918,19 +918,45 @@ namespace LambdatestConsole
                 if (doneEmails % 1000 == 0)
                 {
                     reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report 1000 email DONE",
-                        "Done Emails: " + doneEmails.ToString() + " \n" + 
-                        "From Total: " + emails.Count.ToString() + " \n" + "Current Email: " + email) ;
+                        "Done Emails: " + doneEmails.ToString() + " \n" +
+                        "From Total: " + emails.Count.ToString() + " \n" + "Current Email: " + email);
                 }
 
+                // Chanage the IP 
+                if (doneEmails % 2 == 0)
+                {
+                    List<Operation> ipOperations = new List<Operation>
+                    {
+                        new AltTabOperation
+                    (
+                        name: "Switch to the VPN",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\VPN\1-SwitchToNord\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,0)
+                    ),
+                            new AltTabOperation
+                    (
+                        name: "Switch to the browser",
+                        imgToFindPaths: new List<string>()
+                        {
+                            @"C:\LambdatestConsole\VPN\1-SwitchToTheBrowser\1.PNG",
+                        },
+                        waitAfterDoCommand: new TimeSpan(0,0,0)
+                    ),
+
+                    };
+                }
+
+
+
+
+
+
+
             }
-            
-           
-            
-
-            
-
 
         }
-
     }
-}
+} 

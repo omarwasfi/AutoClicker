@@ -882,42 +882,13 @@ namespace LambdatestConsole
 
                 };
 
-
-                foreach (Operation operation in operations)
-                {
-                    int tries = 0;
-                    while (operation.State == OperationState.Faild)
-                    {
-                        HandleOperation handleOperation =
-                           new HandleOperation(operation, @"c:\LambdatestConsole\screen.png");
-                        handleOperation.TryToHandle();
-
-                        if (operation.State != OperationState.Successed)
-                        {
-                            log.Info("Operation: " + operation.Name + "=> Faild");
-                            Thread.Sleep(1000);
-                            if (tries == 300)
-                            {
-                                reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report Stuck",
-                                    "Operation name: " + operation.Name + " \n Number of done emails: " + doneEmails.ToString() + " \n Current email: " + email);
-                            }
-
-                        }
-                        else
-                        {
-                            log.Info("Operation: " + operation.Name + "=> Succsseed");
-                        }
-
-                        tries++;
-                    }
-
-                }
+                runOperations(doneEmails, reportEmail, email, operations);
 
                 doneEmails += 1;
 
-                if (doneEmails % 1000 == 0)
+                if (doneEmails % 50 == 0)
                 {
-                    reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report 1000 email DONE",
+                    reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report 50 email DONE",
                         "Done Emails: " + doneEmails.ToString() + " \n" +
                         "From Total: " + emails.Count.ToString() + " \n" + "Current Email: " + email);
                 }
@@ -927,26 +898,39 @@ namespace LambdatestConsole
                 {
                     List<Operation> ipOperations = new List<Operation>
                     {
-                        new AltTabOperation
-                    (
-                        name: "Switch to the VPN",
-                        imgToFindPaths: new List<string>()
-                        {
-                            @"C:\LambdatestConsole\VPN\1-SwitchToNord\1.PNG",
-                        },
-                        waitAfterDoCommand: new TimeSpan(0,0,0)
-                    ),
-                            new AltTabOperation
-                    (
-                        name: "Switch to the browser",
-                        imgToFindPaths: new List<string>()
-                        {
-                            @"C:\LambdatestConsole\VPN\1-SwitchToTheBrowser\1.PNG",
-                        },
-                        waitAfterDoCommand: new TimeSpan(0,0,0)
-                    ),
+                        new LeftClickOperation
+                        (
+                            name: "Open the vpn extention",
+                            imgToFindPaths: new List<string>()
+                            {
+                                @"C:\LambdatestConsole\VPN\1-OpenTheExtention\1.PNG",
+                            },
+                            waitAfterDoCommand: new TimeSpan(0,0,1)
+                        ),
+                         new LeftClickOperation
+                        (
+                            name: "Disconnect",
+                            imgToFindPaths: new List<string>()
+                            {
+                                @"C:\LambdatestConsole\VPN\2-Disconnect\1.PNG",
+                            },
+                            waitAfterDoCommand: new TimeSpan(0,0,1)
+                        ),
+                          new LeftClickOperation
+                        (
+                            name: "Quick Connect",
+                            imgToFindPaths: new List<string>()
+                            {
+                                @"C:\LambdatestConsole\VPN\3-QuickConnect\1.PNG",
+                            },
+                            waitAfterDoCommand: new TimeSpan(0,0,0)
+                        )
 
                     };
+
+                    runOperations(doneEmails, reportEmail, email, ipOperations);
+
+
                 }
 
 
@@ -957,6 +941,39 @@ namespace LambdatestConsole
 
             }
 
+        }
+
+        private static void runOperations(int doneEmails, Email reportEmail, string email, List<Operation> operations)
+        {
+            foreach (Operation operation in operations)
+            {
+                int tries = 0;
+                while (operation.State == OperationState.Faild)
+                {
+                    HandleOperation handleOperation =
+                       new HandleOperation(operation, @"c:\LambdatestConsole\screen.png");
+                    handleOperation.TryToHandle();
+
+                    if (operation.State != OperationState.Successed)
+                    {
+                        log.Info("Operation: " + operation.Name + "=> Faild");
+                        Thread.Sleep(1000);
+                        if (tries == 300)
+                        {
+                            reportEmail.Send(to: "alprincewasfi@gmail.com", subject: "Lambdatest console report Stuck",
+                                "Operation name: " + operation.Name + " \n Number of done emails: " + doneEmails.ToString() + " \n Current email: " + email);
+                        }
+
+                    }
+                    else
+                    {
+                        log.Info("Operation: " + operation.Name + "=> Succsseed");
+                    }
+
+                    tries++;
+                }
+
+            }
         }
     }
 } 

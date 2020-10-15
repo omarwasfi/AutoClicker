@@ -34,7 +34,14 @@ namespace ACLibrary
         public void TryToHandle()
         {
             log.Info("Start handling " + operation.Name);
-            findImage();
+            try
+            {
+                findImage();
+            }
+            catch
+            {
+                operation.State = OperationState.Faild;
+            }
         }
 
         private void findImage()

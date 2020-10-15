@@ -898,32 +898,32 @@ namespace LambdatestConsole
                 {
                     List<Operation> ipOperations = new List<Operation>
                     {
-                        new LeftClickOperation
+                        new AltTabOperation
                         (
-                            name: "Open the vpn extention",
+                            name: "Open the vpn Program",
                             imgToFindPaths: new List<string>()
                             {
-                                @"C:\LambdatestConsole\VPN\1-OpenTheExtention\1.PNG",
+                                @"C:\LambdatestConsole\VPN\1-OpenTheProgram\1.PNG",
                             },
                             waitAfterDoCommand: new TimeSpan(0,0,1)
                         ),
                          new LeftClickOperation
                         (
-                            name: "Disconnect",
+                            name: "Change Ip",
                             imgToFindPaths: new List<string>()
                             {
-                                @"C:\LambdatestConsole\VPN\2-Disconnect\1.PNG",
+                                @"C:\LambdatestConsole\VPN\2-Change\1.PNG",
                             },
                             waitAfterDoCommand: new TimeSpan(0,0,1)
                         ),
-                          new LeftClickOperation
+                          new AltTabOperation
                         (
-                            name: "Quick Connect",
+                            name: "Back To The Browser",
                             imgToFindPaths: new List<string>()
                             {
-                                @"C:\LambdatestConsole\VPN\3-QuickConnect\1.PNG",
+                                @"C:\LambdatestConsole\VPN\3-BackToTheBrowser\1.PNG",
                             },
-                            waitAfterDoCommand: new TimeSpan(0,0,0)
+                            waitAfterDoCommand: new TimeSpan(0,0,2)
                         )
 
                     };
